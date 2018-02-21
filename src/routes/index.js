@@ -9,7 +9,7 @@ import artists from "../controllers/artist_controller";
 
 let router = express();
 
-initializeDB(db=>{
+initializeDB(db => {
     router.use(middleware({config,db}));
 
     // API routes

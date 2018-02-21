@@ -4,7 +4,7 @@ export default() => {
     let api = Router();
 
     api.get("/", (req, res) => {
-        res.json({"Hello":"World"})
+        res.render("index",{});
     })
 
     return api;

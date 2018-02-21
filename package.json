@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
-    "build":"babel src -s -D -d dist --presets es2015,stage-0",
-    "start":"NODE_ENV=production pm2 start dist",
-    "prestart":"npm run -s build",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "start": "NODE_ENV=production pm2 start dist",
+    "prestart": "npm run -s build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Joseph, Taylor, Tim, and Shayne",
@@ -19,6 +19,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.18.2",
     "bootstrap": "^4.0.0",
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "knex": "^0.14.4",
     "mysql": "^2.15.0",

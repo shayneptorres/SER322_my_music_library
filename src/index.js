@@ -1,6 +1,7 @@
 import http from "http";
 import express from "express";
 import bodyParser from "body-parser";
+import path from "path"
 
 import appConfig from "./config/app";
 import dbConfig from "./config/db";
@@ -9,6 +10,11 @@ import routes from "./routes";
 let app = express();
 
 app.server = http.createServer(app);
+
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, '/views')));
 
 // JSON parsing
 

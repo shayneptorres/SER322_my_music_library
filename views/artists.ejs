@@ -25,7 +25,7 @@
                         <td><%=data[i].formation_date%></td>
                         <td><%=data[i].manager%></td>
                         <td><%=data[i].no_members%></td>
-                        <td><button  onclick="" class="btn btn-primary">See details</button></td>
+                        <td><button  onclick="toArtistDetails('<%= data[i].artist_id %>')" class="btn btn-primary">See details</button></td>
                     </tr>
                 <% }
                 

@@ -1,27 +1,6 @@
-<html>
-    <head>
-        <title>Artists</title>
-
-        <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
-        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            toHome = () => {                
-                window.location.href = "/home";
-            }
-
-            toAlbums = () => {
-                window.location.href = "/albums";
-            }
-
-            toSongs = () => {
-                window.location.href = "/songs";
-            }
-        </script>
-    </head>
+<%- include layouts/header.ejs %>
     <body style="background-color: gray">
-        <div style="padding: 10px 10px 10px 10px; background-color: gray">
+        <div style="padding: 10px 10px 10px 10px;">
             <h2 style="color:white;">Artists!<h2>
             <div>
                 <button onclick="toHome()" class="btn btn-primary">Home</button>
@@ -29,7 +8,6 @@
                 <button onclick="toSongs()" class="btn btn-primary">Songs</button>
             </div>
             <hr>
-            
             <table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
                 <tr>
                     <th scope="col" width="50px">No</th>
@@ -56,5 +34,4 @@
                 <% } %>
             </table>
         </div>
-    </body>
-</html>
+    <%- include layouts/footer.ejs %>

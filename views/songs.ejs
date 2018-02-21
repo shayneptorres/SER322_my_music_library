@@ -1,38 +1,18 @@
-<html>
-    <head>
-        <title>Songs</title>
-
-        <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
-        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            toHome = () => {                
-                window.location.href = "/home";
-            }
-
-            toArtists = () => {
-                window.location.href = "/artists";
-            }
-
-            toAlbums = () => {
-                window.location.href = "/albums";
-            }
-        </script>
-    </head>
-    <body>
+<%- include layouts/header.ejs %>
+<body style="background-color: gray">
         <div style="padding: 10px 10px 10px 10px;">
-            <h2>Songs!<h2>
+            <h2 style="color:white;">Songs!<h2>
             <div>
-                <button onclick="toHome()" class="btn btn-success">Home</button>
-                <button onclick="totoArtists()" class="btn btn-success">Artists</button>
-                <button onclick="toAlbums()" class="btn btn-success">Albums</button>
+                <button onclick="toHome()" class="btn btn-primary">Home</button>
+                <button onclick="totoArtists()" class="btn btn-primary">Artists</button>
+                <button onclick="toAlbums()" class="btn btn-primary">Albums</button>
             </div>
-            <table border="1" cellpadding="7" cellspacing="7">
+            <hr>
+            <table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
                 <tr>
                     <th width="50px">No</th>
-                    <th>Name</th>
-                    <th>Release date</th>
+                    <th scope="col" >Name</th>
+                    <th scope="col" >Release date</th>
                 </tr>
                 <% if(data.length > 0){ 
                         for(var i = 0;i < data.length;i++) { %>
@@ -50,5 +30,4 @@
                 <% } %>
             </table>
         </div>
-    </body>
-</html>
+    <%- include layouts/footer.ejs %>

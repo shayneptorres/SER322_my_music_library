@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Artists</title>
+        <title>MyMusic</title>
 
         <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
         <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -21,6 +21,10 @@
 
             toArtists = () => {
                 window.location.href = "/artists";
+            }
+
+            toArtistDetails = (id) => {
+                window.location.href = `/artists/${id}`;
             }
         </script>
     </head>

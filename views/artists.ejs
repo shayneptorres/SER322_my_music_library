@@ -15,6 +15,7 @@
                     <th scope="col">Formation date</th>
                     <th scope="col">Manager</th>
                     <th scope="col">Band members</th>
+                    <th scope="col">Details</th>
                 </tr>
                 <% if(data.length > 0){ 
                         for(var i = 0;i < data.length;i++) { %>
@@ -24,6 +25,7 @@
                         <td><%=data[i].formation_date%></td>
                         <td><%=data[i].manager%></td>
                         <td><%=data[i].no_members%></td>
+                        <td><button  onclick="" class="btn btn-primary">See details</button></td>
                     </tr>
                 <% }
                 

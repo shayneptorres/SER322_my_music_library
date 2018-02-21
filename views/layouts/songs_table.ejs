@@ -1,0 +1,26 @@
+<table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
+    <tr>
+        <th width="50px">No</th>
+        <th scope="col" >Name</th>
+        <th scope="col" >Album name</th>
+        <th scope="col" >Recording comapny</th>
+        <th scope="col" >Release date</th>
+
+    </tr>
+    <% if(songsData.length > 0){ 
+            for(var i = 0;i < songsData.length;i++) { %>
+        <tr>
+            <td><%=(i+1)%></td>
+            <td><%=songsData[i].song_name%></td>
+            <td><%=songsData[i].album_name%></td>
+            <td><%=songsData[i].recording_co%></td>
+            <td><%=songsData[i].release_date%></td>
+        </tr>
+    <% }
+    
+    }else{ %>
+            <tr>
+            <td colspan="3">No Albums</td>
+            </tr>
+    <% } %>
+</table>

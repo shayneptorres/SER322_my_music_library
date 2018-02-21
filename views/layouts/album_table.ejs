@@ -1,0 +1,23 @@
+<table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
+    <tr>
+        <th width="50px">No</th>
+        <th scope="col" >Name</th>
+        <th scope="col" >Release date</th>
+        <th scope="col" >Recoring conpany</th>
+    </tr>
+    <% if(albumsData.length > 0){ 
+            for(var i = 0;i < albumsData.length;i++) { %>
+        <tr>
+            <td><%=(i+1)%></td>
+            <td><%=albumsData[i].name%></td>
+            <td><%=albumsData[i].release_date%></td>
+            <td><%=albumsData[i].recording_co%></td>
+        </tr>
+    <% }
+    
+    }else{ %>
+            <tr>
+            <td colspan="3">No Albums</td>
+            </tr>
+    <% } %>
+</table>

@@ -1,0 +1,14 @@
+<%- include layouts/header.ejs %>
+
+<div style="padding: 10px 10px 10px 10px;"></div>
+    <h2><%- artist.name %></h2>
+</div>
+<hr>
+<h4>Albums by <%- artist.name %></h4>
+<%- include layouts/album_table.ejs %>
+
+<hr>
+<h4>Songs by <%- artist.name %></h4>
+<%- include layouts/songs_table.ejs %>
+
+<%- include layouts/footer.ejs %>

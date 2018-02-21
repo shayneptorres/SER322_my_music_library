@@ -7,24 +7,36 @@
 
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script type="text/javascript">
-            toHome = () => {
+            toHome = () => {                
                 window.location.href = "/home";
+            }
+
+            toAlbums = () => {
+                window.location.href = "/albums";
+            }
+
+            toSongs = () => {
+                window.location.href = "/songs";
             }
         </script>
     </head>
-    <body>
-        <div style="padding: 10px 10px 10px 10px;">
-            <h2>Artists!<h2>
+    <body style="background-color: gray">
+        <div style="padding: 10px 10px 10px 10px; background-color: gray">
+            <h2 style="color:white;">Artists!<h2>
             <div>
-                <button onclick="toHome()" class="btn btn-success">Home</button>
+                <button onclick="toHome()" class="btn btn-primary">Home</button>
+                <button onclick="toAlbums()" class="btn btn-primary">Albums</button>
+                <button onclick="toSongs()" class="btn btn-primary">Songs</button>
             </div>
-            <table border="1" cellpadding="7" cellspacing="7">
+            <hr>
+            
+            <table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
                 <tr>
-                    <th width="50px">No</th>
-                    <th>Name</th>
-                    <th>Formation date</th>
-                    <th>Manager</th>
-                    <th>Band members</th>
+                    <th scope="col" width="50px">No</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Formation date</th>
+                    <th scope="col">Manager</th>
+                    <th scope="col">Band members</th>
                 </tr>
                 <% if(data.length > 0){ 
                         for(var i = 0;i < data.length;i++) { %>

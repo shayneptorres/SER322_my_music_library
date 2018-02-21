@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Albums</title>
+
+        <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
+        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            toHome = () => {                
+                window.location.href = "/home";
+            }
+
+            toArtists = () => {
+                window.location.href = "/artists";
+            }
+
+            toSongs = () => {
+                window.location.href = "/songs";
+            }
+        </script>
+    </head>
+    <body>
+        <div style="padding: 10px 10px 10px 10px;">
+            <h2>Albums!<h2>
+            <div>
+                <div>
+                    <button onclick="toHome()" class="btn btn-success">Home</button>
+                    <button onclick="totoArtists()" class="btn btn-success">Artists</button>
+                    <button onclick="toSongs()" class="btn btn-success">Songs</button>
+                </div>
+            </div>
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>Name</th>
+                    <th>Release date</th>
+                    <th>Recoring conpany</th>
+                </tr>
+                <% if(data.length > 0){ 
+                        for(var i = 0;i < data.length;i++) { %>
+                    <tr>
+                        <td><%=(i+1)%></td>
+                        <td><%=data[i].name%></td>
+                        <td><%=data[i].release_date%></td>
+                        <td><%=data[i].recording_co%></td>
+                    </tr>
+                <% }
+                
+                }else{ %>
+                        <tr>
+                        <td colspan="3">No Albums</td>
+                        </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>

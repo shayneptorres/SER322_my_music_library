@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Artists</title>
+
+        <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
+        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            toHome = () => {
+                window.location.href = "/home";
+            }
+        </script>
+    </head>
+    <body>
+        <div style="padding: 10px 10px 10px 10px;">
+            <h2>Artists!<h2>
+            <div>
+                <button onclick="toHome()" class="btn btn-success">Home</button>
+            </div>
+            <table border="1" cellpadding="7" cellspacing="7">
+                <tr>
+                    <th width="50px">No</th>
+                    <th>Name</th>
+                    <th>Formation date</th>
+                    <th>Manager</th>
+                    <th>Band members</th>
+                </tr>
+                <% if(data.length > 0){ 
+                        for(var i = 0;i < data.length;i++) { %>
+                    <tr>
+                        <td><%=(i+1)%></td>
+                        <td><%=data[i].name%></td>
+                        <td><%=data[i].formation_date%></td>
+                        <td><%=data[i].manager%></td>
+                        <td><%=data[i].no_members%></td>
+                    </tr>
+                <% }
+                
+                }else{ %>
+                        <tr>
+                        <td colspan="3">No Artists</td>
+                        </tr>
+                <% } %>
+            </table>
+        </div>
+    </body>
+</html>

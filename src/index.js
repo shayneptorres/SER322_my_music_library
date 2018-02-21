@@ -5,6 +5,7 @@ import path from "path"
 
 import appConfig from "./config/app";
 import dbConfig from "./config/db";
+import setupDB from "./db/setupDB";
 import routes from "./routes";
 
 let app = express();
@@ -24,6 +25,8 @@ app.use(bodyParser.json({
 
 // api routes
 app.use(routes);
+
+setupDB()
 
 app.server.listen(appConfig.port);
 console.log("Started listening on port ", app.server.address().port);

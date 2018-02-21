@@ -1,25 +1,10 @@
-<html>
-    <head>
-        <title>Welcome</title>
-
-        <link rel="stylesheet" type="text/css" href="/views/styles/home.css">
-        <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-            toArtists = () => {
-                window.location.href = "/artists";
-            }
-        </script>
-    </head>
-    <body>
+<%- include layouts/header.ejs %>
         <div style="padding: 10px 10px 10px 10px;">
             <h2>Welcome to my music library<h2>
             <div>
                 <button onclick="toArtists()" class="btn btn-success">See Artists</button>
-                <button onclick="" class="btn btn-success">See music</button>
-                <button onclick="" class="btn btn-success">See music</button>
+                <button onclick="toAlbums()" class="btn btn-success">See Albums</button>
+                <button onclick="toSongs()" class="btn btn-success">See Songs</button>
             </div>
         </div>
-    </body>
-</html>
+<%- include layouts/footer.ejs %>

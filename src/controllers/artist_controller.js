@@ -20,10 +20,6 @@ export default() => {
                 })
 
                 connection.query("SELECT * FROM artists", (dbErr, dbRes) => {
-                    if (dbErr) {
-                        console.log("Could not execute query: ",dbErr);
-                        res.json({"data":[],"success":false})
-                    }
                     console.log("Made it here: ",dbRes);
                     res.render("artists",{data:dbRes});
                 })

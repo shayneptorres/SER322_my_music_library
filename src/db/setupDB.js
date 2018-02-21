@@ -6,12 +6,13 @@ export default () => {
     db(connection => {
 
         var create_db_sql = fs.readFileSync('./sql/create_db.sql').toString();
-        var create_artists_sql = fs.readFileSync('./sql/create_artists.sql').toString();
-        var seed_db = fs.readFileSync('./sql/seed/seed_db.sql').toString();
+        var create_artists_sql = fs.readFileSync('./sql/create_artists_table.sql').toString();
+        var create_songs_sql = fs.readFileSync('./sql/create_songs_table.sql').toString();
+        var create_albums_sql = fs.readFileSync('./sql/create_albums_table.sql').toString();
         
         connection.connect(err => {
             if (err) {
-                console.log("There was a problem: ", err);
+                console.log("There was a problem: ");
                 return
             }
         
@@ -20,37 +21,50 @@ export default () => {
             // Create the dabase
             connection.query(create_db_sql, (dbErr, res) => {
                 if (dbErr) {
-                    console.log("Could not create DB: ", err);
+                    console.log("Could not create DB: ");
                     return
                 }
-                console.log("Database created: ", res);
+                console.log("Database created: ");
             })
 
             // use the database
             connection.query("USE my_music_library;", (dbErr, res) => {
                 if (dbErr) {
-                    console.log("Could not access DB: ", err);
+                    console.log("Could not access DB: ");
                     return
                 }
-                console.log("Database accessed: ", res);
+                console.log("Database accessed: ");
             })
 
             // create the tables
+
+            //// Create artists
             connection.query(create_artists_sql, (dbErr, res) => {
                 if (dbErr) {
-                    console.log("Could not create tables: ", err);
+                    console.log("Could not create artists: ");
                     return
                 }
-                console.log("Tables created: ", res);
+                console.log("Table 'artists' created: ");
             })
 
-            // connection.query(seed_db, (dbErr, res) => {
-            //     if (dbErr) {
-            //         console.log("Could not seed db: ", err);
-            //         return
-            //     }
-            //     console.log("DB Seeded: ", res);
-            // })
+            //// Create albums
+            connection.query(create_albums_sql, (dbErr, res) => {
+                if (dbErr) {
+                    console.log("Could not create albums: ");
+                    return
+                }
+                console.log("Table 'albums' created: ");
+            })
+
+            //// Create songs
+            connection.query(create_songs_sql, (dbErr, res) => {
+                if (dbErr) {
+                    console.log("Could not create songs: ");
+                    return
+                }
+                console.log("Table 'songs' created: ");
+            })
+
         })
     })
 }

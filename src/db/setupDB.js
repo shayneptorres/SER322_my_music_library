@@ -9,6 +9,7 @@ export default () => {
         var create_artists_sql = fs.readFileSync('./sql/create_artists_table.sql').toString();
         var create_songs_sql = fs.readFileSync('./sql/create_songs_table.sql').toString();
         var create_albums_sql = fs.readFileSync('./sql/create_albums_table.sql').toString();
+        var create_billboards_sql = fs.readFileSync('./sql/create_billboard_chart_table.sql').toString();
         
         connection.connect(err => {
             if (err) {
@@ -63,6 +64,15 @@ export default () => {
                     return
                 }
                 console.log("Table 'songs' created: ");
+            })
+
+            //// Create BILLBOARDS
+            connection.query(create_billboards_sql, (dbErr, res) => {
+                if (dbErr) {
+                    console.log("Could not create billboards: ");
+                    return
+                }
+                console.log("Table 'billbords' created: ");
             })
 
         })

@@ -42,6 +42,28 @@ var songs = [
     ["Joshu Tree", "1990-02-02", 5, 7]
 ];
 
+
+var billboardSeedSQL = "INSERT INTO billboard_chart (position, date, song_id, artist_id) VALUES ?";
+var billboard_chart = [
+    [1, "2010-02-11", 1, 1],
+    [2, "2012-04-01", 2, 1],
+    [4, "2009-02-13", 4, 1],
+    [5, "2014-05-14", 5, 2],
+    [6, "2018-06-16", 6, 2],
+    [7, "2014-06-18", 7, 2],
+    [8, "2012-07-19", 8, 2],
+    [9, "2015-02-15", 9, 3],
+    [10, "2017-04-14", 10, 3],
+    [11, "2013-05-11", 11, 4],
+    [12, "2011-07-17", 12, 4],
+    [13, "2010-03-03", 13, 4],
+    [14, "2010-03-03", 14, 4],
+    [15, "2010-03-03",15, 4],
+    [16, "2016-02-02",16, 4],
+    [17, "2016-02-02",17, 4],
+    [18, "2016-02-02",18, 5]
+];
+
 db(connection => {
 
     connection.query("USE my_music_library", (dbErr, dbRes) => {
@@ -72,5 +94,13 @@ db(connection => {
             return
         }
         console.log("Songs Seeded: ");
+    })
+
+    connection.query(billboardSeedSQL, [billboard_chart], (dbErr, res) => {
+        if (dbErr) {
+            console.log("Could not seed billboards: ", dbErr);
+            return
+        }
+        console.log("Billboards Seeded: ");
     })
 })

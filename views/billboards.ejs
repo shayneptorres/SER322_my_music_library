@@ -1,7 +1,7 @@
 <%- include layouts/header.ejs %>
 <body style="background-color: gray">
         <div style="padding: 10px 10px 10px 10px;">
-            <h2 style="color:white;">Songs!<h2>
+            <h2 style="color:white;">Billboards!<h2>
             <div>
                 <button onclick="toHome()" class="btn btn-primary">Home</button>
                 <button onclick="toArtists()" class="btn btn-primary">Artists</button>
@@ -12,15 +12,19 @@
             <table class="table table-hover table-dark" border="1" cellpadding="7" cellspacing="7">
                 <tr>
                     <th width="50px">No</th>
-                    <th scope="col" >Name</th>
-                    <th scope="col" >Release date</th>
+                    <th scope="col" >Position</th>
+                    <th scope="col" >Date charted</th>
+                    <th scope="col" >Song</th>
+                    <th scope="col" >Artist</th>
                 </tr>
                 <% if(data.length > 0){ 
                         for(var i = 0;i < data.length;i++) { %>
                     <tr>
                         <td><%=(i+1)%></td>
-                        <td><%=data[i].name%></td>
-                        <td><%=data[i].release_date%></td>
+                        <td><%=data[i].position%></td>
+                        <td><%=data[i].date%></td>
+                        <td><%=data[i].song%></td>
+                        <td><%=data[i].artist%></td>
                     </tr>
                 <% }
                 
@@ -32,3 +36,8 @@
             </table>
         </div>
     <%- include layouts/footer.ejs %>
+
+    <!-- position INT,
+    date DATE,
+    song_id INT,
+    artist_id INT, -->

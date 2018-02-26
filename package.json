@@ -4,7 +4,7 @@
   "description": "A Super awesome music library Made by the Awesome Group10 for SER 322",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
+    "dev": "nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "NODE_ENV=production pm2 start dist",
     "seed": "node dist/db/seedDB.js",

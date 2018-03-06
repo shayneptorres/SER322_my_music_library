@@ -13,7 +13,7 @@ export default () => {
         
         connection.connect(err => {
             if (err) {
-                console.log("There was a problem: ");
+                console.log("Cannot connect to MySQL, make sure your local credentials match the settings in the 'index.js' file in the 'db' folder: ");
                 return
             }
         
